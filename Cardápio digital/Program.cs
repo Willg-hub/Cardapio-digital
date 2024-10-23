@@ -1,3 +1,6 @@
+using Cardapio_digital.Entity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +12,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+builder.Services.AddDbContext<PgContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
