@@ -3,5 +3,5 @@ Projeto pessoal de desenvolvimento de uma API que fornece dados de um banco para
 Tecnologias:
 
 - ASP-NET
-- SQL Server
+- PostgresSQL
 - Entity Framework
