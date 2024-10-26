@@ -9,11 +9,12 @@ namespace Cardapio_digital.Models
 
         public string Nome {get; set; }
 
-        byte[] Imagem_grupo { get; set; }
-        public Grupo(string nome, byte[] imagem) 
+        public byte[]? Imagem_grupo { get; set; }
+
+        public bool Exibir {  get; set; }
+        public Grupo() 
         {
-         this.Nome = nome;
-         this.Imagem_grupo = imagem;
+
         }
     }
 }

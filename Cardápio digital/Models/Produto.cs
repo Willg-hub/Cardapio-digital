@@ -15,15 +15,13 @@ namespace Cardapio_digital.Models
 
         public byte[] Produto_imagem { get; set; }
 
+        public bool Exibiir {  get; set; }
+
         public int Id_grupo { get; set; }
 
-        public Produto(string nome, string descricao, decimal preco, byte[] produto_imagem, int id_grupo)
+        public Produto()
         {
-            Nome = nome;
-            Descricao = descricao;
-            Preco = preco;
-            Produto_imagem = produto_imagem;
-            Id_grupo = id_grupo;
+
         }
     }
 }
