@@ -1,4 +1,6 @@
 using Cardapio_digital.Entity.Context;
+using Cardapio_digital.Entity.Interface;
+using Cardapio_digital.Entity.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PgContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
-
+builder.Services.AddTransient<IGrupoRepository, GrupoRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
