@@ -1,5 +1,6 @@
 ﻿using Cardapio_digital.Entity.Context;
 using Cardapio_digital.Entity.Interface;
+using Cardapio_digital.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cardapio_digital.Controllers
@@ -21,6 +22,18 @@ namespace Cardapio_digital.Controllers
         {
             var grupo = _grupoContext.GetAll();
             return Ok(grupo);
+        }
+
+        [HttpPost("Cadastrar-Grupo")]
+
+        public IActionResult CadastrarProduto([FromBody] Grupo grupo)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            _grupoContext.Create(grupo);
+            return Ok("Grupo criado com sucesso.");
         }
     }
 }
