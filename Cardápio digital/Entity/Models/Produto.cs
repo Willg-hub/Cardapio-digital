@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Cardapio_digital.Models
+namespace Cardapio_digital.Entity.Models
 {
     public class Produto
     {
@@ -15,7 +15,7 @@ namespace Cardapio_digital.Models
 
         public byte[] Produto_imagem { get; set; }
 
-        public bool Exibiir {  get; set; }
+        public bool Exibiir { get; set; }
 
         public int Id_grupo { get; set; }
 

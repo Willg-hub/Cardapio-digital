@@ -1,4 +1,4 @@
-﻿using Cardapio_digital.Models;
+﻿using Cardapio_digital.Entity.Models;
 
 namespace Cardapio_digital.Entity.Interface
 {

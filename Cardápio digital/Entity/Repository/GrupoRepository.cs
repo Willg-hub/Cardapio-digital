@@ -1,6 +1,6 @@
 ﻿using Cardapio_digital.Entity.Context;
 using Cardapio_digital.Entity.Interface;
-using Cardapio_digital.Models;
+using Cardapio_digital.Entity.Models;
 
 namespace Cardapio_digital.Entity.Repository
 {
