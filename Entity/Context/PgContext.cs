@@ -1,7 +1,7 @@
-﻿using Cardapio_digital.Entity.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Entity.Models;
 
-namespace Cardapio_digital.Entity.Context
+namespace Entity.Context
 {
     public class PgContext : DbContext
     {

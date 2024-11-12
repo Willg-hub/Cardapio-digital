@@ -1,4 +1,4 @@
-﻿namespace Cardapio_digital.Entity.DTOs
+﻿namespace Entity.DTOs
 {
     public class GrupoDTO
     {

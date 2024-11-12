@@ -1,12 +1,10 @@
-﻿using AutoMapper;
-using Cardapio_digital.Entity.Context;
-using Cardapio_digital.Entity.DTOs;
-using Cardapio_digital.Entity.Interface;
-using Cardapio_digital.Entity.Mapping;
-using Cardapio_digital.Entity.Models;
+﻿using Entity.DTOs;
+using Entity.Interface;
+using Entity.Models;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
-namespace Cardapio_digital.Controllers
+namespace API.Controllers
 {
     [ApiController]
     [Route("Grupo")]
@@ -22,16 +20,16 @@ namespace Cardapio_digital.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("GetListaGrupo")]
+        public IActionResult GetListaGrupo()
         {
             var grupo = _grupoContext.GetAll();
             return Ok(grupo);
         }
 
-        [HttpPost("Cadastrar-Grupo")]
+        [HttpPost("CreateGrupo")]
 
-        public IActionResult CadastrarProduto([FromBody] GrupoDTO grupoDTO)
+        public IActionResult CadastrarGrupo([FromBody] GrupoDTO grupoDTO)
         {
             if (!ModelState.IsValid)
             {
@@ -41,6 +39,36 @@ namespace Cardapio_digital.Controllers
             var grupo = _mapper.Map<Grupo>(grupoDTO);
             _grupoContext.Create(grupo);
             return Ok("Grupo criado com sucesso.");
+        }
+
+        [HttpPut("UpdateGrupo")]
+
+        public IActionResult UpdateGrupo([FromBody] Grupo grupo)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var grupoExistente = _grupoContext.VerificaGrupoExistente(grupo.Id);
+            if (grupoExistente == null)
+            {
+                return NotFound("Grupo não encontrado.");
+            }
+
+            // Atualiza a entidade existente com os valores do DTO
+            _grupoContext.Update(grupo);
+
+            return Ok("Grupo atualizado com sucesso.");
+
+        }
+
+        [HttpGet("GetGrupo")]
+
+        public IActionResult GetGrupo(int id)
+        {
+            var grupo = _grupoContext.GetById(id);
+            return Ok(grupo);
         }
     }
 }

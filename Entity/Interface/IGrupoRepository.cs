@@ -1,6 +1,6 @@
-﻿using Cardapio_digital.Entity.Models;
+﻿using Entity.Models;
 
-namespace Cardapio_digital.Entity.Interface
+namespace Entity.Interface
 {
     public interface IGrupoRepository
     {
@@ -8,5 +8,8 @@ namespace Cardapio_digital.Entity.Interface
         void Update(Grupo grupo);
         List<Grupo> GetAll();
 
+        Grupo VerificaGrupoExistente(int id);
+
+        Grupo GetById(int id);
     }
 }

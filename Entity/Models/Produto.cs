@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Cardapio_digital.Entity.Models
+namespace Entity.Models
 {
     public class Produto
     {

@@ -1,7 +1,7 @@
-using Cardapio_digital.Entity.Context;
-using Cardapio_digital.Entity.Interface;
-using Cardapio_digital.Entity.Mapping;
-using Cardapio_digital.Entity.Repository;
+using Entity.Context;
+using Entity.Interface;
+using Entity.Mapping;
+using Entity.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

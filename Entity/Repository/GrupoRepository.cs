@@ -1,8 +1,9 @@
-﻿using Cardapio_digital.Entity.Context;
-using Cardapio_digital.Entity.Interface;
-using Cardapio_digital.Entity.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Entity.Context;
+using Entity.Interface;
+using Entity.Models;
 
-namespace Cardapio_digital.Entity.Repository
+namespace Entity.Repository
 {
     public class GrupoRepository : IGrupoRepository
     {
@@ -29,6 +30,16 @@ namespace Cardapio_digital.Entity.Repository
             _context.Update(grupo);
             _context.SaveChanges();
 
+        }
+
+        public Grupo VerificaGrupoExistente(int id)
+        {
+            return _context.Grupo.AsNoTracking().FirstOrDefault(g => g.Id == id);
+        }
+
+        public Grupo GetById(int id)
+        {
+            return _context.Grupo.Find(id);
         }
     }
 }
