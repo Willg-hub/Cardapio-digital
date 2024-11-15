@@ -1,0 +1,14 @@
+.nav {
+    height: 300px !important
+}
+
+.titulo{
+    color:#ffff;
+}
+
+.navContent{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}

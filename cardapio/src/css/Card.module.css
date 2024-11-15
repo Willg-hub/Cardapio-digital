@@ -1,0 +1,35 @@
+.cardProduto {
+    background-color: #f1f1f1;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius:5px;
+}
+
+.decricaoProduto{
+    padding:5px;
+}
+
+.cardTitulo{
+    width:100%;
+    background-color:#fff !important;
+    border-bottom:1px solid #000000 !important;
+}
+
+.imagemProduto{
+    width:100%;
+    height:100%;
+    max-width:170px;
+    min-width:140px;
+    max-height:170px;
+    min-height:140px;
+    margin:auto;
+    border-radius:3px;
+}
+
+.figure{
+    margin:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
