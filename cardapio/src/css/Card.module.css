@@ -1,19 +1,22 @@
 .cardProduto {
     background-color: #f1f1f1;
-    margin: 15px;
     display: flex;
+    margin:10px;
     justify-content: space-between;
     border-radius:5px;
 }
 
 .decricaoProduto{
     padding:5px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
 .cardTitulo{
     width:100%;
     background-color:#fff !important;
-    border-bottom:1px solid #000000 !important;
+    border-bottom: 1px solid #fff;
 }
 
 .imagemProduto{

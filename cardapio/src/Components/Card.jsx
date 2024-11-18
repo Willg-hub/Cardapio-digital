@@ -2,55 +2,31 @@ import Card from 'react-bootstrap/Card';
 import Figure from 'react-bootstrap/Figure';
 import styles from '../css/Card.module.css';
 import img from "../assets/a.png";
-function CardGrupo() {
+function CardGrupo({ produtos }) {
     return (
-        <Card className="col-12 col-md-9 mx-auto mt-3">
+        <Card className=" col-md-9 mx-auto mt-3 p-0 bg-white">
             <Card.Header as="h2" className={`${styles.cardTitulo} text-center`}>[Nome do grupo]</Card.Header>
-            <Card.Body className={styles.cardProduto}>
-                <div className={`${styles.decricaoProduto} col-7 col-md-9`}>
-                    <Card.Title>[Nome do produto]</Card.Title>
-                    <Card.Text>
-                        [asdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffff]
-                    </Card.Text>
-                    <Card.Title>Por: R$00,00</Card.Title>
-                </div>
-                <Figure className={`${styles.figure}`}>
-                    <Figure.Image className={styles.imagemProduto}
+            {produtos.map((produto, index) => (
 
-                        src={img}
-                    />
-                </Figure>
-            </Card.Body>
-            <Card.Body className={styles.cardProduto}>
-                <div className={`${styles.decricaoProduto} col-7 col-md-9`}>
-                    <Card.Title>[Nome do produto]</Card.Title>
-                    <Card.Text>
-                        [asdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffff]
-                    </Card.Text>
-                    <Card.Title>Por: R$00,00</Card.Title>
-                </div>
-                <Figure className={`${styles.figure}`}>
-                    <Figure.Image className={styles.imagemProduto}
+                <Card.Body className={styles.cardProduto}>
 
-                        src={img}
-                    />
-                </Figure>
-            </Card.Body>
-            <Card.Body className={styles.cardProduto}>
-                <div className={`${styles.decricaoProduto} col-7 col-md-9`}>
-                    <Card.Title>[Nome do produto]</Card.Title>
-                    <Card.Text>
-                        [asdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffasdffffffffffffffffffffffffffffffff]
-                    </Card.Text>
-                    <Card.Title>Por: R$00,00</Card.Title>
-                </div>
-                <Figure className={`${styles.figure}`}>
-                    <Figure.Image className={styles.imagemProduto}
+                    <div className={`${styles.decricaoProduto} col-7 col-md-9`}>
+                        <Card.Title>{produto.nome}</Card.Title>
+                        <Card.Text>
+                            {produto.descricao}
+                        </Card.Text>
+                        <Card.Title>{produto.preco}</Card.Title>
+                    </div>
+                    <Figure className={`${styles.figure}`}>
+                        <Figure.Image className={styles.imagemProduto}
 
-                        src={img}
-                    />
-                </Figure>
-            </Card.Body>
+                            src={img}
+                        />
+                    </Figure>
+
+
+                </Card.Body>
+            ))}
         </Card>
     );
 }
