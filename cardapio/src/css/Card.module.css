@@ -1,7 +1,7 @@
 .cardProduto {
     background-color: #f1f1f1;
     display: flex;
-    margin:10px;
+    margin:5px;
     justify-content: space-between;
     border-radius:5px;
 }
