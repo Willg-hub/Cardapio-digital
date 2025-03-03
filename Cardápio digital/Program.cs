@@ -18,7 +18,16 @@ builder.Services.AddDbContext<PgContext>(options =>
 
 builder.Services.AddTransient<IGrupoRepository, GrupoRepository>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTudo",
+        policy =>
+        {
+            policy.AllowAnyOrigin()   // Permite qualquer origem (ou defina apenas seu front-end)
+                  .AllowAnyMethod()   // Permite qualquer método (GET, POST, PUT, DELETE)
+                  .AllowAnyHeader();  // Permite qualquer cabeçalho
+        });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("PermitirTudo");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
