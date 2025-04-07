@@ -11,7 +11,7 @@ namespace Entity.Repository
 
         public GrupoRepository(PgContext context)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(_context));
+            _context = context;
         }
 
         public void Create(Grupo grupo)

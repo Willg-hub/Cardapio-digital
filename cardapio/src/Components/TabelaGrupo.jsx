@@ -8,7 +8,6 @@ function TabelaGrupo() {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getListaGrupo(); // Chama a API
-            console.log(data);
             setListaGrupo(data); // Atualiza o estado com os grupos recebidos
         };
 

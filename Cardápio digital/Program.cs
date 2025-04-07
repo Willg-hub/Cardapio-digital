@@ -16,7 +16,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PgContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
-builder.Services.AddTransient<IGrupoRepository, GrupoRepository>();
+builder.Services.AddScoped<IGrupoRepository, GrupoRepository>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddCors(options =>
 {
