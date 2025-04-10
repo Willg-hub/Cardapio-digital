@@ -13,7 +13,7 @@ namespace Entity.Repository
     {
         private readonly PgContext _context;
 
-        ProdutoRepository(PgContext pgContext)
+       public ProdutoRepository(PgContext pgContext)
         {
             _context = pgContext;
         }
