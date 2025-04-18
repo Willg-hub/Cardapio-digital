@@ -30,6 +30,7 @@ builder.Services.AddCors(options =>
                   .AllowAnyHeader();  // Permite qualquer cabeçalho
         });
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

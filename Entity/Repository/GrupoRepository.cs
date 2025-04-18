@@ -39,7 +39,7 @@ namespace Entity.Repository
 
         public Grupo GetById(int id)
         {
-            return _context.Grupo.Find(id);
+            return _context.Grupo.Include(x=> x.ListaProdutos).Where(x=> x.Id == id).FirstOrDefault();
         }
     }
 }

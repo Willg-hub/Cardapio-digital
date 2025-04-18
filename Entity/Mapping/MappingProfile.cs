@@ -9,6 +9,11 @@ namespace Entity.Mapping
         public MappingProfile()
         {
             CreateMap<GrupoDTO, Grupo>();
+            CreateMap<Grupo, GrupoDTO>()
+                .ForMember(dest => dest.ListaProdutos, opt => opt.MapFrom(src => src.ListaProdutos));
+            CreateMap<ProdutoDTO, Produto>();
+
+            CreateMap<Produto, ProdutoDTO>();
 
         }
     }

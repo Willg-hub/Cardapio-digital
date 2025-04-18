@@ -68,7 +68,8 @@ namespace API.Controllers
         public IActionResult GetGrupo(int id)
         {
             var grupo = _grupoContext.GetById(id);
-            return Ok(grupo);
+            var grupoDto = _mapper.Map<GrupoDTO>(grupo);
+            return Ok(grupoDto);
         }
     }
 }

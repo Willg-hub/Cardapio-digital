@@ -12,6 +12,11 @@ namespace Entity.Context
         }
         public DbSet<Grupo> Grupo { get; set; }
         public DbSet<Produto> Produto { get; set; }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new GrupoMap());
+            modelBuilder.ApplyConfiguration(new ProdutoMap());
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
